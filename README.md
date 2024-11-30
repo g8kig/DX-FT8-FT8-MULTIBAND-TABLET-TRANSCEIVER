@@ -2,8 +2,37 @@
 
 ![DX FT8 INTRO](https://github.com/user-attachments/assets/408df1d6-2f16-4091-8fff-48c7fffb95d2)
 
+----------------------------------------------------------------------------------------------------------------------------------
 
+UPDATE #1 (11/21/2024):
 
+- DX FT8 Project Firmware Version 1.3 Release Note 21 November 2024
+  
+This version of the firmware was written to make two changes:
+
+1) Logging is always ON. There is no need to initiate logging by touching the Log Button.
+   
+2) The Log Button has been replaced with a Button labeled “Fixd” in Blue and “Rcvd” in Red.
+   
+This button only affects the QSO Mode of operation.
+
+When the Button is shown in Blue as “Fixd”, FT8 Messages are transmitted on the FT8 Offset Frequency
+
+which is controlled by the location of Offset Cursor shown on the Waterfall.
+
+When the Button is shown in the Red as “Rcvd” FT8 Messages are transmitted on the frequency used by the Target Station.
+
+Again, the change only affects the QSO Mode of operation. When in the Beacon Mode, FT8 Messages are transmitted on
+
+the FT8 Offset Frequency regardless of the State of the Fixd / Rcvd Button.
+
+Please refer to the DX_FT8 V1.3 Cheat Sheet Document supplied with this Release Note.
+
+- To download firmware please click on firmware and then use the download arrow on right top corner of page to download as RAW.
+
+- An Abstract outlining DX FT8 Conception and Design path as a PDF file added.
+
+-----------------------------------------------------------------------------------------------------------------------------------
 
 DX FT8 TRANSCEIVER PROJECT is a collaboration between Charles(Charley)Hill, W5BAA and Barbaros(Barb)Asuroglu, WB2CBA.
 
@@ -80,7 +109,9 @@ https://drive.google.com/drive/folders/1oobpyw1_IDn4CDS9kfwyihfSv9H_CrcM?usp=sha
 
 Souce file is too large to upload to Github. To circumvent around Github file size restriction, a google drive solution is preferred.
 
- 	
+ACKNOWLEDGEMENT:
+
+DX-FT8 Firmware is inspired by work done by Karlis Goba, YL3JG. Here is a link to his website: https://github.com/kgoba/ft8_lib. 
 
 
 
