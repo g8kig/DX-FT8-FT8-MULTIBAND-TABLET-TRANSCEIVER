@@ -1,38 +1,56 @@
-# DX FT8  A MULTIBAND FT8 DIGITAL MODE TABLET TRANSCEIVER
+# DX FT8  A MULTIBAND FT8 DIGITAL MODE 5 BANDS OR 7 BANDS TABLET TRANSCEIVER
 
 ![DX FT8 INTRO](https://github.com/user-attachments/assets/408df1d6-2f16-4091-8fff-48c7fffb95d2)
 
+DX FT8 FIRMWARE UPDATE HISTORY:
+
 ----------------------------------------------------------------------------------------------------------------------------------
+DX FT8 Project Firmware Version 1.9 Release Note 26 January 2025:
 
-UPDATE #1 (11/21/2024):
+----------------------------------------------------------------------------------------------------------------------------------
+DX FT8 Project Firmware Version 1.9 Release Notes: 26 January 2025
 
-- DX FT8 Project Firmware Version 1.3 Release Note 21 November 2024
-  
-This version of the firmware was written to make two changes:
+This version of the firmware was written to make six changes:
 
-1) Logging is always ON. There is no need to initiate logging by touching the Log Button.
+1) The logging of contacts in the ADIF Log File has been changed so that all data items entered are first checked for
+
+ “Leading Spaces” When leading spaces are found they are removed. It is noted that some Contact Log Applications do
+
+not like leading spaces in data entries.
+
+2) The rules for validation of Station Data on the SD Card have been modified to be “Not So Picky’.
+
+3) Received CQ messages are now displayed with the Received Signal Level (RSL) appended onto the message to help
+
+users decide which CQ they want to pursue.
+
+4) Modified the Cursor shown in Waterfall so that two vertical red lines are shown bracketing the selected FT8 channel of 
+
+the transmitted FT8 signal making it easier to find a blank channel.
+
+5) The project files have been extensively refactored to provide more efficient execution.
+
+6) The project has been ported to build from the command line where a recent 'arm-none-eabi-gcc compiler' is available
    
-2) The Log Button has been replaced with a Button labeled “Fixd” in Blue and “Rcvd” in Red.
-   
-This button only affects the QSO Mode of operation.
+using your favourite editor. > ‘build.cmd’ and ‘build.sh’ are sample build scripts that demonstrate the process. 
 
-When the Button is shown in Blue as “Fixd”, FT8 Messages are transmitted on the FT8 Offset Frequency
+As ever YMMV.
 
-which is controlled by the location of Offset Cursor shown on the Waterfall.
+Please note that for Users with Five Band Boards or Seven Band Boards that it is highly recommended that you use a 
 
-When the Button is shown in the Red as “Rcvd” FT8 Messages are transmitted on the frequency used by the Target Station.
-
-Again, the change only affects the QSO Mode of operation. When in the Beacon Mode, FT8 Messages are transmitted on
-
-the FT8 Offset Frequency regardless of the State of the Fixd / Rcvd Button.
-
-Please refer to the DX_FT8 V1.3 Cheat Sheet Document supplied with this Release Note.
-
-- To download firmware please click on firmware and then use the download arrow on right top corner of page to download as RAW.
+Freshly Formatted SD Card with a Fresh StationData.txt file before using DX FT8 V1.9 for the first time.
 
 - An Abstract outlining DX FT8 Conception and Design path as a PDF file added.
 
------------------------------------------------------------------------------------------------------------------------------------
+- ACKNOWLEDGEMENT: We would like to thank Paul Winwood, G8KIG, for his contributions to refine and refactor DX FT8 Firmware as well
+
+  as adding new features and cleaning the code. Paul's contributions are reflected in DX FT8 V1.9 firmware.
+  
+----------------------------------------------------------------------------------------------------------------------------------------------  
+
+  Check Paul's github page for latest source code files: https://github.com/g8kig/DX-FT8-MULTIBAND-TABLET-TRANSCEIVER-Source/releases/tag/V1.9
+  
+----------------------------------------------------------------------------------------------------------------------------------------------
 
 DX FT8 TRANSCEIVER PROJECT is a collaboration between Charles(Charley)Hill, W5BAA and Barbaros(Barb)Asuroglu, WB2CBA.
 
@@ -70,7 +88,11 @@ Here are some highlights on DX FT8 Specifications:
  
 -	DX FT8 Transceiver RF Board plugs into STM32F746 DISCO evaluation board to form the DX FT8 transceiver. 
 
--	DX FT8 Transceiver operates on 5 HF bands. These bands are:
+-	DX FT8 Transceiver operates on 5 HF bands or 7 Bands depending on PCB type. Design files for both 5 band and 7 bands boards are posted in this github page.
+
+-	These bands are:
+
+For 5 Bands Board:
   
 1 – 20m (14.074 MHz)
 
@@ -82,7 +104,28 @@ Here are some highlights on DX FT8 Specifications:
 
 5- 10m (28.074 MHz)
 
+For 7 Bands Board:
+  
+1 – 40m (7.074 MHz)
+
+2- 30m (10.136 MHz)
+
+3 – 20m (14.074 MHz)
+
+4- 17m (18.100 MHz)
+
+5- 15m (21.074 MHz)
+
+6- 12m (24.915 MHz)
+
+7- 10m (28.074 MHz)
+
+
 DX FT8 Transceiver has two RF Power Output Selection, LOW RF POWER and HIGH RF POWER which can be selected with the RF POWER Slide switch on the side of the transceiver.
+
+40m	   372mW	       844mW
+
+30m	   373mW	       843mW
 
 20m	   380mW	       823mW
 
@@ -107,7 +150,11 @@ DX FT8 Transceiver has two RF Power Output Selection, LOW RF POWER and HIGH RF P
 
 https://drive.google.com/drive/folders/1oobpyw1_IDn4CDS9kfwyihfSv9H_CrcM?usp=sharing
 
-Souce file is too large to upload to Github. To circumvent around Github file size restriction, a google drive solution is preferred.
+Source file is too large to upload to Github. To circumvent around Github file size restriction, a google drive solution is preferred.
+
+The most recent version can be downloaded from this link:
+
+https://github.com/g8kig/DX-FT8-MULTIBAND-TABLET-TRANSCEIVER-Source/releases/tag/untagged-cf0e12cb6f30d0435487
 
 ACKNOWLEDGEMENT:
 
@@ -117,18 +164,25 @@ DX-FT8 Firmware is inspired by work done by Karlis Goba, YL3JG. Here is a link t
 
 ---------------------------------------------------------------------------------------------------------------
 KIT ORDERING INFO:
+---------------------------------------------------------------------------------------------------------------------------------
+All DXFT8 Kit shipments after 14 January 2025 will be 7 Band DXFT8 kits and that the firmware will support both the 5 Band and 7 Band units. 
+
+There is nothing operationally different between the two except the additional bands covered.
+
+---------------------------------------------------------------------------------------------------------------------------------
  
 The DX FT8 Kits may be ordered from Kees TALEN (K5BCQ) via PayPal 
 
 Paypal ID is  K5BCQ@ arrl.net
 
-Order as Merchandise. Yes that incurs a PayPal Fee but allows K5BCQ to print a shipping label.
+Order as "Goods or Services". Yes that incurs a PayPal Fee but allows K5BCQ to print a shipping label.
  
 The kits are divided into two pieces, one set of DX FT8 RF BOARD items from K5BCQ and 
 
 one set of items you must order directly from Mouser, Digikey, etc. to complete the DX FT8 
 Transceiver.
  
+
                         
 -	KIT PRICE is US$40.00 for DX FT8 RF BOARD and miscellaneous parts to complete RF board.
       
