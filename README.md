@@ -3,7 +3,9 @@
 ![IMG_2011](https://github.com/user-attachments/assets/36db0864-356a-4503-b567-8c01f2cb571e)
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------
-
+DX FT8 TRANSCEIVER BUILD GUIDE CAN BE USED BOTH FOR 5 BAND VERSION AND 7 BAND VERSION. BOTH VERSIONS ARE IDENTICAL IN BUILD DETAILS.
+ONLY DIFFERENCE IS BAND COVERAGE.
+----------------------------------------------------------------------------------------------------------------------------------------------------
 DX FT8 TRANSCEIVER PROJECT is a collaboration between Charles(Charley)Hill, W5BAA and Barbaros(Barb)Asuroglu, WB2CBA.
 
 DX FT8 Project is brain child of Charles(Charley)Hill, W5BAA. Charley designed and build various versions of GUI based FT8 Transceivers over the years. 
@@ -17,7 +19,7 @@ I can't thank enough Charley for his excellent GUI FT8 Firmware and his persever
 It's a pleasure for me to collaborate with Charley,W5BAA, on hardware side, RF design and PCB design of DX FT8 Transceiver.
 
 DX FT8 is an OPEN SOURCE PROJECT.
-
+---------------------------------
 DX FT8 is a FT8 Digital mode capable HF QRPp GUI (Graphical User Interface) based multiband Transceiver.
 
 DX FT8 is abreviation for Digital Xceiver for FT8. 
@@ -105,16 +107,20 @@ DX-FT8 Firmware is inspired by work done by Karlis Goba, YL3JG. Here is a link t
 ----------------------------------------------------------------------------------------------------------------------------------
 
 DX FT8 FIRMWARE UPDATE HISTORY:
--
+
 ----------------------------------------------------------------------------------------------------------------------------------
-DX FT8 Project Firmware Version 1.9.3 Release Notes: 31 March 2025
--
-THe major change in V1.9.3 comes in FT8 Traffic exchange to be inline with handling various types of Call messages.
+DX FT8 Project Firmware Version 1.9.4 Release Notes: 18 April 2025
+----------------------------------------------------------------------------------------------------------------------------------
+A new feature in this release is to allow logging to be enabled and disabled. Logging is enabled 
+by default.
+
+Logging is controlled by on option in the ‘Tune’ menu.
+
+![V1 9 4 Tune screenshot](https://github.com/user-attachments/assets/663c1a57-7cf5-4eb5-a793-13cf2ab16040)
 
 This version of the firmware also updated to include SOTA / POTA / QRP calling CQ plus the ability to send Free Text messages.
 
-You can choose 4 type of CQ under tune menu with assigned buttons:
-![IMG_2012](https://github.com/user-attachments/assets/e2b0294d-7ba5-4f67-bd8a-4e218d1b6a48)
+You can choose 4 type of CQ under tune menu with assigned buttons
 
 CQ [YourCall] [YourGrid]
 
@@ -129,6 +135,18 @@ If you're interested in free text to add your preferred call text, you can add 2
 [YourCall]:[YourGrid]:[Free Text 1]:[Free Text 2]
 
 Free Text can be 1 to 27 characters in the range of [ 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ+-./?]
+
+ Additionally free text messages now support more options.
+ 
+ The following examples are all valid examples of free text messages.
+ 
+    CQ QRPP 2E1HGA/P IO92 
+    
+    CQ EU   2E1HGA 
+    
+    CQ GQRP 2E1HGA/P 
+    
+    CQ JOTA 2E1HGA/P IO92
 
 To choose between CQ and Free Text, click the Free1 and Free2 buttons  under Tune menu
 
