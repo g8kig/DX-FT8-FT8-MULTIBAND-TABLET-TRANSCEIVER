@@ -2,7 +2,7 @@
 
 ![IMG_2011](https://github.com/user-attachments/assets/36db0864-356a-4503-b567-8c01f2cb571e)
 
-FOR DX FT8 KIT INFORMATION AND ALL RELATED DISCUSSION YOU CAN JOIN DX FT8 FORUM GROUP IN THIS LINK: https://dxft8.groups.io/g/main
+FOR DX FT8 KIT INFORMATION AND ALL RELATED DISCUSSION YOU CAN JOIN BluQRP FORUM GROUP IN THIS LINK: https://groups.io/g/BluQRP
 ---------------------------------------------------------------------------------------------------------------------------------------------------
 DX FT8 TRANSCEIVER BUILD AND OPERATION GUIDE CAN BE USED FOR OLDER 5 BAND VERSION AND 7 BAND VERSION without Internal Battery. 
 ---------------------------------------------------------------------------------------------------------------------------------------------------
@@ -103,199 +103,65 @@ DX FT8 Transceiver has two RF Power Output Selection, LOW RF POWER and HIGH RF P
 
 -	A short video of DX FT8 in action:
   https://www.youtube.com/watch?v=8b2WOxESAVU
-
-ACKNOWLEDGEMENT:
-
-DX-FT8 Firmware is inspired by work done by Karlis Goba, YL3JG. Here is a link to his website: https://github.com/kgoba/ft8_lib. 
-
 ----------------------------------------------------------------------------------------------------------------------------------
 
 DX FT8 FIRMWARE UPDATE HISTORY:
 
 ----------------------------------------------------------------------------------------------------------------------------------
-DX FT8 Project Firmware Version 1.9.7 Release Notes: 09 June 2025
+DX FT8 Project Firmware Version 2.0.0 Release Notes: 29 JULY 2025
 ----------------------------------------------------------------------------------------------------------------------------------
-V1.9.7 brings improvements and fixes for some DX FT8 rigs with poor reception quality.
- 
- Further on air testing has revealed a flaw with the changes made to allow for repeat RR73 
-messages in V1.9.5.
+V2.0.0 includes four major improvements over V1.9.7:
 
-In the case of being in the Beacon Mode and a Repeat RR73 message is sent, the RSL from 
+TX Queue: You can now click on multiple received messages in either QSO or Becn mode. The firmware will queue appropriate responses, automatically sort them, and transmit the best one for you. 
+    
+When calling CQ, replies from multiple stations will be queued automatically as well.
 
-the Target Station is logged as zero instead of the value sent from the Target Station.
+On Device Editing: Six buttons were added under the "Tune" page.
 
-Now, in version V1.9.5 the RSL from the Target Station is logged properly.
+click one of these buttons to activate editing window:
 
-This release introduces a new configuration file format based on the .INI file format. 
+CALL: YourCall or YourCall/P (Note: other prefix/suffix formats aren’t supported)
 
-Release Source Code Files are under DX FT8 FIRMWARE SOURCE CODE FILES Directory. 
+GRID: YourGrid
 
-The existing ‘StationData.txt’ format continues to be supported however the new format is 
-recommended because it is much more tolerant of formatting errors. 
+FREQ: 7074/.../28074 (optional) (Note: the firmware doesn’t validate frequency; make sure it's within the band. Use Band-/Band+ to switch bands.)
 
-It should be named ‘StationData.ini’ placed in the root directory of the SDCard. 
+F1: Free Text 1 (optional) (Free Text also works for "CQ [A-ZZZZ] [YourCall] [YourGrid]")
 
-Delete the StationData.txt file to use the ‘StationData.ini’ file. 
+F2: Free Text 2 (optional)
 
-All new features will be enabled using StationData.ini file. 
+COM: Comments for the session (optional) (This will be added to each QSO in the .ADIF file)
 
-StationData.txt is now deprecated. 
+Tap the same button again to finish editing and changes are saved to StationData.ini.
 
-Leading and trailing spaces and comment lines are permitted. Comment lines start with ‘;’ or ‘#’.
+Auto-Generated StationData.ini: If no StationData.ini file is found on the SD card, the firmware will create one using an internal template. Just enter your callsign and grid on the device and you're ready to go—even with a blank SD card.
 
- [Station] 
+Showing worked QSOs for the current session: Tap the middle-right side of the screen to view worked QSOs, tap again to view the next page. (Tips: take photos as a backup in case the SD card fails)
 
-Call=G8KIG 
+--------------------------------------------------------------------
+FOR SOURCE CODE PLEASE VISIT:
+    https://github.com/chillmf/DX-FT8-Transceiver-Source-Code_V2
+--------------------------------------------------------------------
 
-Locator=IO91 
-
-[FreeText] 
-
-1=Free text 1 
-
-2=Free text 2 
-
-[BandData] 
-40=7.174 
-
-30=10.136 
-
-20=14.174 
-
-17=18.201 
-
-15=21.174 
-
-12=24.925 
-
-10=28.174 
-
-There are three sections in the file; ‘Station’, ‘FreeText’ and ‘BandData’. 
-
-Only the first section ‘Station’ is required. 
-
-The Call and Locator is configured in this Station section. 
-
-In the ‘FreeText’ section, up to two free text messages can be configured. 
-
-The final section ‘BandData’ introduces a new feature:
-
- The frequency used by the transceiver for each band can be modified. 
-
-The 40M and 20M frequencies only apply to the 7-band transceiver.
-
- e.g. the Japan domestic FT8 frequency on 40m is 7.041Mhz, so the ‘BandData’ section to 
-configure this would be
- 
- [BandData] 
-40=7.041 
-
-Bug fixes:
- 
- From Charley W5BAA:
- 
- •FT8 transmissions were being sent anything up to 1.0 seconds before other 
-implementations, transmissions are now being sent around 0.2 seconds into the time 
-slot.
-
- •When an FT8 contact is made in Beacon Mode the contact is now not logged until either 
-a 73 or RR73 message is received from the target station
- 
-----------------------------------------------------------------------------------------------------------------------------------
-- The Audio DSP Algorithms have been modified to improve Unwanted Side Band Suppression.
-
-- The Firmware is now being provided as a HEX File to make installation via ST Link easier.
-
--------------------------------------------------------------------------------------------------------------------------------
-DX FT8 Alternate Firmware by N6HAN Zhenxing Han is under DX FT8 Firmware directory. Feel free to play with it.
-Zhenxing Han, N6HAN added many advanced features to DX FT8 on top of official firmware's faetures.
--------------------------------------------------------------------------------------------------------------------------------
-The SOTA / POTA capability was initially developed by Wei, AG6AU.
-
-Here is a link to Wei’s GitHub Repository:
-
-https://github.com/wcheng95/DX-FT8-MULTIBAND-TABLET-TRANSCEIVER-Source/tree/main
-
-Many thanks to Wei and hopefully others will use the Open Source Code to make great additions to the code.
-
-WEI, AG6AQ's Instructions how to setup and use DX FT8 on SOTA/POTA mode is in these links:
-
-https://dxft8.groups.io/g/main/message/300
-
-https://dxft8.groups.io/g/main/message/302
-
-
----------------------------------------------------------------------------------------------------------------------------------
 DX FT8 3D PRINTED CASE FILES ADDED. A big Thank You to Dave,ZL1DMM for his excellent 3D case design.
 ![IMG_2033](https://github.com/user-attachments/assets/88e9b8ac-b20d-4a34-907f-2210f0ff66a0)
  
-----------------------------------------------------------------------------------------------------------------------------------
-Please note that for Users with Five Band Boards or Seven Band Boards that it is highly recommended that you use a 
-
-Freshly Formatted SD Card with a Fresh StationData.txt file before using DX FT8 V1.9 for the first time.
-
-- An Abstract outlining DX FT8 Conception and Design path as a PDF file added.
-
 ------------------------------------------------------------------------------------------------------------------------------------------
 
-- ACKNOWLEDGEMENT: We would like to thank Paul Winwood, G8KIG, for his contributions to refine and refactor DX FT8 Firmware as well
+- ACKNOWLEDGEMENT:
 
-  as adding new features and cleaning the code. Paul's contributions are reflected in DX FT8 firmware.
+- We would like to thank Paul Winwood, G8KIG, Zhenxing han, N6HAN and Wei Cheng, AG6AQ for their contributions to develop and adding new features and cleaning the code of DX FT8 Firmware.
 
-  Check Paul's github page for latest source code files:  https://github.com/g8kig/DX-FT8-MULTIBAND-TABLET-TRANSCEIVER-Source/
+- DX-FT8 Firmware is inspired by work done by Karlis Goba, YL3JG. Here is a link to his website: https://github.com/kgoba/ft8_lib.
+    
   
 --------------------------------------------------------------------------------------------------------------------------------
 
-KIT ORDERING INFO:
+
 ---------------------------------------------------------------------------------------------------------------------------------
 DUE TO TARIFFS DX FT8 KITS ARE GETTING EXTREMELY EXPENSIVE. WE STOPPED KITTING FOR THE TIME BEING TO WAIT FOR THE TARIFF SITUATION TO SETTLE. 
 NO KITS WILL BE OFFERED AS OF 05/12/2025 UNTIL FURTHER NOTICE. SORRY FOR THE INCONVENIENCE. 
-BELOW OUTLINED DETAILS ARE ONLY FOR INFORMATION.
 ----------------------------------------------------------------------------------------------------------------------------------------------
-All DXFT8 Kit shipments after APRIL 2025 will be 7 Band BATTERY MANAGEMENT SYSTEM INCLUDED DXFT8 kits and that the firmware will support both the 5 Band and 7 Band units. 
-
-There is nothing operationally different between the two except the additional bands covered.
-
----------------------------------------------------------------------------------------------------------------------------------
- 
-The DX FT8 Kits may be ordered from Kees TALEN (K5BCQ) via PayPal 
-
-Paypal ID is  K5BCQ@ arrl.net
-
-Order as "Goods or Services". Yes that incurs a PayPal Fee but allows K5BCQ to print a shipping label.
- 
-The kits are divided into two pieces, one set of DX FT8 RF BOARD items from K5BCQ and 
-
-one set of items you must order directly from Mouser, Digikey, etc. to complete the DX FT8 
-Transceiver.
- 
-
-                        
--	KIT PRICE is US$40.00 for DX FT8 RF BOARD and miscellaneous parts to complete RF board.
-      
--	 Shipping for a US address is US$5.00 . 
-
-International shipping will depend on Country. Please send an email to: K5BCQ@arrl.net for inquiring shipping cost to your country.
- 
-Additional parts to order to finalize the kit building:
-
-1-	STMicro STM32F746 DISCO Evaluation board
-
-Sample Link: 
-https://www.digikey.com/en/products/detail/stmicroelectronics/STM32F746G-DISCO/5267791?utm_adgroup=&utm_source=google&utm_medium=cpc&utm_campaign=PMax%20Shopping_Product_Low%20ROAS%20Categories&utm_term=&utm_content=&utm_id=go_cmp-20243063506_adg-_ad-__dev-c_ext-_prd-5267791_sig-Cj0KCQjwurS3BhCGARIsADdUH50Ts6paiim-lRjlgUEfkDAu1IRlpNb7VxFkCvfQx1aE6lQbkA6ywvwaAkE2EALw_wcB&gad_source=1&gclid=Cj0KCQjwurS3BhCGARIsADdUH50Ts6paiim-lRjlgUEfkDAu1IRlpNb7VxFkCvfQx1aE6lQbkA6ywvwaAkE2EALw_wcB
-
-1-	Micro-SD card for STM board  
-
-Sample Link: 
-https://a.co/d/0k5Jp81
-
-
-1-	12V power supply or 5V supply provided by the user
-
-1-	CR2032 coin cell provided by the user
-
- 
------------------------------------------------------------------------------------------------------------- 
 
 
 
